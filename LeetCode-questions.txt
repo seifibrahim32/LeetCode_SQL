@@ -19,3 +19,20 @@ SELECT DISTINCT email from Person group by email having count(email) > 1;
 
 DELETE p1 from Person p1 left JOIN Person p2 ON p1.email = p2.email WHERE p1.id > p2.id;
 
+OR
+
+DELETE p1 from Person p1 right JOIN Person p2 ON p1.email = p2.email WHERE p1.id > p2.id;
+
+# Rising Temperature
+
+SELECT w1.id FROM Weather w1, Weather w2 WHERE DATEDIFF(w1.recordDate, w2.recordDate) = 1 
+AND w1.temperature > w2.temperature;
+
+OR
+
+SELECT Weather.Id 
+FROM   Weather 
+       JOIN Weather AS w 
+         ON w.RecordDate = SUBDATE(Weather.RecordDate, 1) 
+WHERE  Weather.Temperature > w.Temperature 
+
