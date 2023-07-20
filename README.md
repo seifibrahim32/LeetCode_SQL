@@ -1,4 +1,4 @@
-# LeetCode_SQL
+# LeetCode SQL Solutions
 Solutions for SQL Problems
 
 
