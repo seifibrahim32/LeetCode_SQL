@@ -1,0 +1,21 @@
+
+# Combine Two Tables
+
+SELECT firstName,lastName,city,state FROM Person LEFT JOIN Address ON Person.personId = Address.personId;
+
+# Employees Earning More Than Their Managers
+
+SELECT e1.name AS Employee from Employee e1 INNER JOIN Employee e2 ON e1.managerID = e2.id WHERE e1.salary > e2.salary;
+
+# Duplicate Emails
+
+SELECT DISTINCT p1.email as Email from Person p1 INNER JOIN Person p2 ON p1.email = p2.email AND p1.id != p2.id;
+
+OR
+
+SELECT DISTINCT email from Person group by email having count(email) > 1;
+
+# Delete Duplicate Emails
+
+DELETE p1 from Person p1 left JOIN Person p2 ON p1.email = p2.email WHERE p1.id > p2.id;
+
