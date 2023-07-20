@@ -41,3 +41,7 @@ WHERE  Weather.Temperature > w.Temperature
 SELECT c1.name as Customers from Customers c1 Where c1.id != ALL (SELECT Orders.customerId from Orders inner JOIN Customers ON 
 Orders.customerId = Customers.id);
 
+OR
+
+SELECT name as Customers from Customers Left join Orders on Customers.id = Orders.customerId where customerId is null;
+
