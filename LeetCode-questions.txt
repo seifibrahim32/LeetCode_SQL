@@ -31,10 +31,10 @@ AND w1.temperature > w2.temperature;
 OR
 
 SELECT Weather.Id 
-FROM   Weather 
+FROM Weather 
        JOIN Weather AS w 
          ON w.RecordDate = SUBDATE(Weather.RecordDate, 1) 
-WHERE  Weather.Temperature > w.Temperature 
+WHERE Weather.Temperature > w.Temperature 
 
 # Customers Who Never Order
 
